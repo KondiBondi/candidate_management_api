@@ -1,3 +1,4 @@
+--create user in mongosh
 use mongo_candidate_management
 switched to db mongo_candidate_management
 db.createUser({
