@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+gh_ssh_key
+gh_ssh_key.pub
