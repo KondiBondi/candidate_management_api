@@ -1,0 +1,12 @@
+use mongo_candidate_management
+switched to db mongo_candidate_management
+db.createUser({
+  user: "candidate_api",
+  pwd: "securepass123",
+  roles: [
+    {
+      role: "readWrite",
+      db: "mongo_candidate_management"
+    }
+  ]
+})

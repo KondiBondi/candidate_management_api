@@ -1,0 +1,52 @@
+spring:
+  application.name: candidate_management_api
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      format_sql: true
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+    show-sql: false
+
+  flyway:
+    enabled: true
+    mixed: false
+    baseline-version: 1
+    baseline-on-migrate: true
+
+
+server:
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    org.mongodb.driver: DEBUG
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+    env:
+      enabled: false
+    heapdump:
+      enabled: false
+    gateway:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+        exclude: env,heapdump,gateway
+  server:
+    port: 9090
+  prometheus:
+    metrics:
+      export:
+        enabled: true

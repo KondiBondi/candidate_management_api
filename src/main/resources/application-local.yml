@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://candidate_api:securepass123@localhost:27017/mongo_candidate_management
+
+  datasource:
+    username: sa
+    password: StrongPassw0rd
+    url: jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=candidate_management
+    jpa:
+      show-sql: false
+    flyway:
+      out-of-order: false
+  logging:
+    level:
+      org.springframework.security: ERROR
+
+  app:
+    encryption-key:
